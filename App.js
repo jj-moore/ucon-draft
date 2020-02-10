@@ -8,6 +8,7 @@ import { Button, Image, StyleSheet, View } from 'react-native';
  NOT POSITIVE IT'S STANDARD, BUT SEEMSED LIKE A GOOD IDEA */ }
 import { ApiButton } from './components/ApiButton';
 import { EncodeButton } from './components/EncodeButton';
+import { StorageButton } from './components/StorageButton';
 
 { /* ALL COMPONENTS EXTEND THE COMPONENT CLASS
  THE COMPONENT IN THE APP.JS FILE IS THE MAIN COMPONENT
@@ -23,7 +24,7 @@ export default class ButtonBasics extends Component {
           <Image source={require('./images/logo.png')} style={styles.image} />
         </View>
         <View style={styles.buttonsContainer}>
-          <EncodeButton title="Press toggle encoding" />
+          <StorageButton title="Store data" />
           <ApiButton title="Press to call fake api" color="#841584" />
           <View style={styles.alternativeLayoutButtonContainer}>
             <EncodeButton title="Press me!" />
