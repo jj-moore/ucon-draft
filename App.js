@@ -10,6 +10,7 @@ import { ApiButton } from './components/ApiButton';
 import { EncodeButton } from './components/EncodeButton';
 import { StorageButton } from './components/StorageButton';
 import { RealmComponent } from './components/RealmComponent';
+import { RsaComponent } from './components/RsaComponent';
 
 { /* ALL COMPONENTS EXTEND THE COMPONENT CLASS
  THE COMPONENT IN THE APP.JS FILE IS THE MAIN COMPONENT
@@ -28,6 +29,7 @@ export default class ButtonBasics extends Component {
           <StorageButton title="Hey you! Store data!" />
           <ApiButton title="Press to call fake api" color="#841584"  />
           <RealmComponent />
+          <RsaComponent title='Encrypt' />
           <View style={styles.alternativeLayoutButtonContainer}>
             <EncodeButton title="Press me!" />
             <ApiButton title="Me too!!" color="#841584" />
