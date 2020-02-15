@@ -24,6 +24,8 @@ export class StorageButton extends Component {
 
   _onLoadData = async () => {
     const username = await AsyncStorage.getItem('username');
+    const publicKey = await AsyncStorage.getItem('public');
+    console.log(publicKey);
     this.setState({ text: username });
   }
 
