@@ -8,7 +8,8 @@ import { RSA } from 'react-native-rsa-native';
 { /* IMPORTS FOR CUSTOM COMPONENTS.
  I PUT THEM IN A FOLDER NAME COMPONENTS.
  NOT POSITIVE IT'S STANDARD, BUT SEEMSED LIKE A GOOD IDEA */ }
-import { MyButton } from './components/MyButton';
+import { MySmallButton } from './components/MySmallButton';
+import { MyLargeButton } from './components/MyLargeButton';
 import { MyTextBox } from './components/MyTextBox';
 
 { /* ALL COMPONENTS EXTEND THE COMPONENT CLASS
@@ -73,13 +74,14 @@ export default class ButtonBasics extends Component {
         </View>
         <MyTextBox placeholder='My Secret' plaintext={this.state.plaintext} onchange={this._setUsername} />
         <View style={styles.buttonContainer}>
-          <MyButton title="1. Encrypt" press={this._encrypt}/>
-          <MyButton title="3. Load" press={this._load}/>
+          <MySmallButton title="1. Encrypt" press={this._encrypt}/>
+          <MySmallButton title="3. Load" press={this._load}/>
         </View>
         <View style={styles.buttonContainer}>
-          <MyButton title="2. Store" press={this._store}/>
-          <MyButton title="4. Decrypt" press={this._decrypt}/>
+          <MySmallButton title="2. Store" press={this._store}/>
+          <MySmallButton title="4. Decrypt" press={this._decrypt}/>
         </View>
+          <MyLargeButton title="Call Sample API" press={this._callAPI}/>
           <Text style={styles.encrypted} textBreakStrategy='simple'>{this.state.encrypted}</Text>
       </View>
     );
@@ -136,9 +138,12 @@ const styles = StyleSheet.create({
   logoContainer:{
     height: 150,
     backgroundColor: 'dodgerblue',
-    marginBottom: 50
+    marginBottom: 25
   },
   logo: {
+    width: 350,
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 25,
     resizeMode: 'contain'
   },

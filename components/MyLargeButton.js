@@ -4,7 +4,7 @@ import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 {/* EACH COMPONENT SHOULD INCLUDE EVERYTHING IT NEEDS TO FUNCTION
   ANY FUNCTIONS, STYLES, ETC... */}
-export class MyButton extends Component {
+export class MyLargeButton extends Component {
   constructor(props) {
     super(props);
     this.state = { title: this.props.title }
@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
   },
   touchable: {
     alignItems: 'center',
-    backgroundColor: 'dodgerblue',
+    backgroundColor: 'red',
     padding: 12,
     borderRadius: 50,
-    width: 100
+    width: 200
   },
   text: {
     fontSize: 16,
