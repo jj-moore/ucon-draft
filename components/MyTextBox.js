@@ -15,7 +15,6 @@ export class MyTextBox extends Component {
   )};
 
   _update = (text) => {
-    this.setState({value: text});
     this.props.onchange(text)
   }
 }

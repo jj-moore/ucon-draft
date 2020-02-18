@@ -94,7 +94,6 @@ export default class ButtonBasics extends Component {
   _encrypt = async () => {
     const publicKey = await AsyncStorage.getItem('public');
     const encrypted = await RSA.encrypt(this.state.plaintext, publicKey);
-    const truncated = encrypted.substring(0, 20);
     this.setState({plaintext: '', encrypted: encrypted});
   }
 
@@ -116,10 +115,21 @@ export default class ButtonBasics extends Component {
   }
 
   _callAPI = () => {
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(response => response.json())
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    const body = {
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    };
+
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify(body)
+    })
+    .then(response => response.text())
     .then(text => {
-      alert(text.title);
+      alert(text);
     })
     .catch(error => {
       alert(error);
